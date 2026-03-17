@@ -14,6 +14,11 @@
 (function() {
     'use strict';
 
+    // 在脚本开头添加检查
+    if (window.self !== window.top) {
+        return; // 如果在iframe中，直接退出
+    }
+
     // ==================== 样式定义 ====================
     GM_addStyle(`
         #md-converter-btn {
